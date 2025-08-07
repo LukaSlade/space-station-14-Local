@@ -20,10 +20,10 @@
     - suitStorage
   - type: AmmoCounter
   - type: Gun
-    fireRate: 2
-    selectedMode: SemiAuto
+    fireRate: 20
+    selectedMode: FullAuto
     availableModes:
-    - SemiAuto
+    - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     soundEmpty:
@@ -32,7 +32,7 @@
     whitelist:
       tags:
       - ShellShotgun
-    capacity: 7
+    capacity: 70
     proto: ShellShotgun
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
@@ -166,9 +166,9 @@
   description: An old yet faithful design, and a favorite among irregular forces of many worlds. Uses .50 shotgun shells.
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
   - type: Item
-    size: Normal
+    size: Tiny
     shape:
-    - 0,0,4,0
+    - 0,0,0,0
     sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
@@ -176,9 +176,12 @@
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 1
+    fireRate: 20
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
   - type: GunSpreadModifier
-    spread: 0.6
+    spread: 1.8
   - type: Tag
     tags:
     - WeaponShotgunKammerer
