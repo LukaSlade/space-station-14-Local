@@ -246,6 +246,28 @@
     fireCost: 62.5
 
 - type: entity
+  name: laser sniper
+  parent: [WeaponLaserCarbinePractice, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponLaserSniper
+  description: Favoured by Nanotrasen Security for being BIG and AWESOME to use.
+  components:
+  - type: StaticPrice
+    price: 600
+  - type: HitscanBatteryAmmoProvider
+    proto: RedShuttleLaser
+    fireCost: 200
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+  - type: MagazineVisuals
+    magState: mag
+    steps: 10
+    zeroVisible: false
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/LaserSniperFire.ogg
+    firerate: 0.5
+- type: entity
   name: pulse pistol
   parent: [BaseWeaponBatterySmall, BaseCentcommContraband]
   id: WeaponPulsePistol
