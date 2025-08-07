@@ -251,6 +251,10 @@
   id: WeaponLaserSniper
   description: Favoured by Nanotrasen Security for being BIG and AWESOME to use.
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Snipers/laser_sniper.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/laser_sniper.rsi
   - type: StaticPrice
     price: 600
   - type: HitscanBatteryAmmoProvider
@@ -266,7 +270,16 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/LaserSniperFire.ogg
-    firerate: 0.5
+    fireRate: 0.5
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.25
+    sprintModifier: 0.25
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3
+  - type: GunRequiresWield
+
 - type: entity
   name: pulse pistol
   parent: [BaseWeaponBatterySmall, BaseCentcommContraband]
@@ -300,6 +313,7 @@
   - type: Battery
     maxCharge: 2000
     startingCharge: 2000
+
 
 - type: entity
   name: pulse carbine
