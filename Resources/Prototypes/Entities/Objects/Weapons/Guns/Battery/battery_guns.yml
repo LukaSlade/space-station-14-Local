@@ -256,28 +256,28 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Snipers/laser_sniper.rsi
   - type: StaticPrice
-    price: 600
+    price: 950
   - type: HitscanBatteryAmmoProvider
     proto: RedShuttleLaser
-    fireCost: 200
+    fireCost: 300
   - type: Battery
-    maxCharge: 2000
-    startingCharge: 2000
+    maxCharge: 1800
+    startingCharge: 1800
   - type: MagazineVisuals
     magState: mag
-    steps: 10
+    steps: 6
     zeroVisible: false
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/LaserSniperFire.ogg
     fireRate: 0.5
   - type: SpeedModifiedOnWield
-    walkModifier: 0.25
-    sprintModifier: 0.25
+    walkModifier: 0.35
+    sprintModifier: 0.35
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
-    maxOffset: 3
-    pvsIncrease: 0.3
+    maxOffset: 3.5
+    pvsIncrease: 0.45
   - type: GunRequiresWield
 
 - type: entity
