@@ -249,7 +249,7 @@
   name: laser sniper
   parent: [WeaponLaserCarbinePractice, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponLaserSniper
-  description: Favoured by Nanotrasen Security for being BIG and AWESOME to use.
+  description: This weapon, manufactured using the chassis design of the Old Earth M-82 Barrett is favoured by Nanotrasen Special Operatives for being BIG and AWESOME to use. It features a remarkable 5 shots! Perfect to put a couple deep burning holes in your enemies from safely afar!
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/laser_sniper.rsi
@@ -258,25 +258,25 @@
   - type: StaticPrice
     price: 950
   - type: HitscanBatteryAmmoProvider
-    proto: RedShuttleLaser
-    fireCost: 300
+    proto: RedSniperLaser
+    fireCost: 500
   - type: Battery
-    maxCharge: 1800
-    startingCharge: 1800
+    maxCharge: 2500
+    startingCharge: 2500
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 5
     zeroVisible: false
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/LaserSniperFire.ogg
     fireRate: 0.5
   - type: SpeedModifiedOnWield
-    walkModifier: 0.35
-    sprintModifier: 0.35
+    walkModifier: 0.45
+    sprintModifier: 0.45
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
-    maxOffset: 3.5
+    maxOffset: 3.8
     pvsIncrease: 0.45
   - type: GunRequiresWield
 
