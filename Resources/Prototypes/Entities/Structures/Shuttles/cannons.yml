@@ -426,8 +426,6 @@
           path: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
           params:
             pitch: 0.7
-  - type: Machine
-    board: ShuttleGunKineticCircuitboard
 
 - type: entity
   parent: ShuttleGunBase
