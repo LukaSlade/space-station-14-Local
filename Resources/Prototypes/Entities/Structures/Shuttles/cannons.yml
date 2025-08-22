@@ -362,6 +362,67 @@
     board: ShuttleGunKineticCircuitboard
 
 - type: entity
+  id: ShuttleGunMachineGun
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: Gun-800 "Shooty Gun"
+  description: Gun stationary killing turret. Manually accumulates shots because of you, extremely effective for people destruction.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    layers:
+    - state: ptk-800
+    - state: mag-7
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    projectileSpeed: 20
+    fireRate: 8
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 3
+    maxAngle: 18
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+      params:
+        variation: 0.02
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
+      params:
+        volume: 0.3
+  - type: MagazineAmmoProvider
+    autoEject: true
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolSubMachineGun
+        insertSound:
+          path: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          params:
+            pitch: 2
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: Machine
+    board: ShuttleGunKineticCircuitboard
+
+- type: entity
   parent: ShuttleGunBase
   id: ShuttleGunKineticOld
   name: exomorphic dematerializer
