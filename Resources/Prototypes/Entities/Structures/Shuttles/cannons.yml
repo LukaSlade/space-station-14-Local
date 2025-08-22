@@ -358,8 +358,8 @@
     proto: BulletKineticShuttle
     capacity: 5
     count: 5
-  - type: Machine
-    board: ShuttleGunKineticCircuitboard
+  #- type: Machine
+  #  board: ShuttleGunKineticCircuitboard
 
 # ---- KNTP for Kinetic Projectile, 350 for .35 Ammunition, S for Submachine Gun Mag, KNP-350 ----
 
@@ -373,7 +373,7 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shuttles/automatic.rsi
     layers:
-    - state: KNTP-350
+    - state: kntp-350
     - state: mag-5
       map: ["enum.GunVisualLayers.Mag"]
   - type: ContainerContainer
