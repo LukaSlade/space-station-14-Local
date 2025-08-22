@@ -358,10 +358,8 @@
     proto: BulletKineticShuttle
     capacity: 5
     count: 5
-  #- type: Machine
-  #  board: ShuttleGunKineticCircuitboard
-
-# ---- KNTP for Kinetic Projectile, 350 for .35 Ammunition, S for Submachine Gun Mag, KNP-350 ----
+  - type: Machine
+    board: ShuttleGunKineticCircuitboard
 
 - type: entity
   id: ShuttleGunMachineGun
@@ -426,7 +424,8 @@
           path: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
           params:
             pitch: 0.7
-
+  - type: Machine
+    board: ShuttleGunKineticCircuitboard
 - type: entity
   parent: ShuttleGunBase
   id: ShuttleGunKineticOld
