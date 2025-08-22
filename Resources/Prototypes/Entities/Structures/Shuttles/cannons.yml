@@ -361,20 +361,21 @@
   - type: Machine
     board: ShuttleGunKineticCircuitboard
 
-# ---- KNTP for Kinetic Projectile, 035 for .35 Ammunition, S for Submachine Gun Mag, KNP-350 ----
+# ---- KNTP for Kinetic Projectile, 350 for .35 Ammunition, S for Submachine Gun Mag, KNP-350 ----
 
 - type: entity
   id: ShuttleGunMachineGun
   parent: [ ShuttleGunBase, ConstructibleMachine]
-  name: KNTP-035 "Shooty Gun"
+  name: KNTP-350 "Shooty Gun"
   description: Stationary machine gun chambered in .35 Auto and accepts .35 SMG magazines. Excellent for providing suppressive fire, and firing at enemies while safely behind cover. Chews threw bullets.
   categories: [ DoNotMap ]
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Shuttles/kinetic.rsi
+    sprite: Objects/Weapons/Guns/Shuttles/automatic.rsi
     layers:
-    - state: ptk-800
-    - state: mag-7
+    - state: KNTP-350
+    - state: mag-5
+      map: ["enum.GunVisualLayers.Mag"]
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -390,12 +391,12 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
   - type: Gun
-    projectileSpeed: 20
+    projectileSpeed: 33
     fireRate: 6
     selectedMode: SemiAuto
     angleDecay: 45
-    minAngle: 3
-    maxAngle: 18
+    minAngle: 10
+    maxAngle: 25
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -405,11 +406,10 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
   - type: MagazineAmmoProvider
-    autoEject: true
   - type: MagazineVisuals
     magState: mag
-    steps: 5
-    zeroVisible: true
+    steps: 6
+    zeroVisible:
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -421,8 +421,11 @@
         insertSound:
           path: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           params:
-            pitch: 2
-        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+            pitch: 0.7
+        ejectSound:
+          path: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          params:
+            pitch: 0.7
   - type: Machine
     board: ShuttleGunKineticCircuitboard
 
