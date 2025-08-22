@@ -361,11 +361,13 @@
   - type: Machine
     board: ShuttleGunKineticCircuitboard
 
+# ---- KNTP for Kinetic Projectile, 035 for .35 Ammunition, S for Submachine Gun Mag, KNP-350 ----
+
 - type: entity
   id: ShuttleGunMachineGun
   parent: [ ShuttleGunBase, ConstructibleMachine]
-  name: Gun-800 "Shooty Gun"
-  description: Gun stationary killing turret. Manually accumulates shots because of you, extremely effective for people destruction.
+  name: KNTP-035 "Shooty Gun"
+  description: Stationary machine gun chambered in .35 Auto and accepts .35 SMG magazines. Excellent for providing suppressive fire, and firing at enemies while safely behind cover. Chews threw bullets.
   categories: [ DoNotMap ]
   components:
   - type: Sprite
@@ -381,7 +383,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 90
       behaviors:
         - !type:ChangeConstructionNodeBehavior
           node: machineFrame
@@ -389,7 +391,7 @@
           acts: ["Destruction"]
   - type: Gun
     projectileSpeed: 20
-    fireRate: 8
+    fireRate: 6
     selectedMode: SemiAuto
     angleDecay: 45
     minAngle: 3
@@ -402,10 +404,12 @@
         variation: 0.02
     soundEmpty:
       path: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
-      params:
-        volume: 0.3
   - type: MagazineAmmoProvider
     autoEject: true
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
   - type: ItemSlots
     slots:
       gun_magazine:
