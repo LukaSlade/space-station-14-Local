@@ -364,16 +364,10 @@
 - type: entity
   id: ShuttleGunMachineGun
   parent: [ ShuttleGunBase, ConstructibleMachine]
-  name: KNTP-350 "Shooty Gun"
+  name: KNTP-350 "Hailstorm"
   description: Stationary machine gun chambered in .35 Auto and accepts .35 SMG magazines. Excellent for providing suppressive fire, and firing at enemies while safely behind cover. Chews threw bullets.
   categories: [ DoNotMap ]
   components:
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Shuttles/automatic.rsi
-    layers:
-    - state: kntp-350
-    - state: mag-5
-      map: ["enum.GunVisualLayers.Mag"]
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -388,26 +382,26 @@
           node: machineFrame
         - !type:DoActsBehavior
           acts: ["Destruction"]
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/automatic.rsi
+    layers:
+    - state: kntp-350
+    - state: mag-6
+      map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     projectileSpeed: 33
     fireRate: 6
     selectedMode: SemiAuto
     angleDecay: 45
-    minAngle: 10
-    maxAngle: 25
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/minigun.ogg
-      params:
-        variation: 0.02
-    soundEmpty:
-      path: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
+    minAngle: 5
+    maxAngle: 13
+    soundEmpty: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/minigun.ogg
   - type: MagazineAmmoProvider
   - type: MagazineVisuals
     magState: mag
     steps: 6
-    zeroVisible:
+    zeroVisible: true
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -419,13 +413,12 @@
         insertSound:
           path: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           params:
-            pitch: 0.7
-        ejectSound:
-          path: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-          params:
-            pitch: 0.7
+            pitch: 0.85
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
   - type: Machine
     board: ShuttleGunKineticCircuitboard
+
+
 - type: entity
   parent: ShuttleGunBase
   id: ShuttleGunKineticOld
