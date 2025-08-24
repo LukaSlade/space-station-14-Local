@@ -362,6 +362,57 @@
     board: ShuttleGunKineticCircuitboard
 
 - type: entity
+  id: ShuttleGunHeavyMachineGun
+  parent: [ ShuttleGunBase, ConstructibleMachine]
+  name: KNTP-450h "Buster"
+  description: Stationary heavy machine gun that holds 10 rounds of .45 Magnum, required to be hand loaded. Excellent for providing heavy suppressive fire, and wasting the secfab's mats!
+  categories: [ DoNotMap ]
+  components:
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 90
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/automatic_heavy.rsi
+    layers:
+    - state: kntp-450
+    - state: mag-13
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    projectileSpeed: 26
+    fireRate: 1.8
+    selectedMode: SemiAuto
+    angleDecay: 45
+    minAngle: 2
+    maxAngle: 8
+    soundEmpty: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 14
+    zeroVisible: false
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+    capacity: 12
+    proto: CartridgeMagnum
+    soundInsert:
+      path: /Audio/Weapons/Guns/Bolt/lmg_bolt_closed.ogg
+  - type: Machine
+    board: ShuttleGunKineticCircuitboard
+
+- type: entity
   id: ShuttleGunMachineGun
   parent: [ ShuttleGunBase, ConstructibleMachine]
   name: KNTP-350 "Hailstorm"
@@ -396,7 +447,7 @@
     minAngle: 5
     maxAngle: 13
     soundEmpty: /Audio/Weapons/Guns/Gunshots/syringe_gun.ogg
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
   - type: MagazineAmmoProvider
   - type: MagazineVisuals
     magState: mag
