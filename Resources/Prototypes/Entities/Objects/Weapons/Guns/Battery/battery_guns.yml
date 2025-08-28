@@ -246,10 +246,10 @@
     fireCost: 62.5
 
 - type: entity
-  name: laser sniper
+  name: pulse sniper
   parent: [WeaponLaserCarbinePractice, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponLaserSniper
-  description: This weapon, manufactured using the chassis design of the Old Earth M-82 Barrett is favoured by Nanotrasen Special Operatives for being BIG and AWESOME to use. It features a remarkable 5 shots! Perfect to put a couple deep burning holes in your enemies from safely afar!
+  description: Perfect to put a couple burning holes in your enemies from safely afar! Legally not designed after the Hristov.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/laser_sniper.rsi
@@ -258,7 +258,7 @@
   - type: StaticPrice
     price: 950
   - type: HitscanBatteryAmmoProvider
-    proto: RedSniperLaser
+    proto: PulseSniperLaser
     fireCost: 500
   - type: Battery
     maxCharge: 2500
