@@ -55,6 +55,18 @@
         {
             "name": "equipped-head-unshaded-dog",
             "directions": 4
+        },
+        {
+            "name": "equipped-head-liz",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-light-liz",
+            "directions": 4
+        },
+        {
+            "name": "equipped-head-unshaded-liz",
+            "directions": 4
         }
     ]
 }

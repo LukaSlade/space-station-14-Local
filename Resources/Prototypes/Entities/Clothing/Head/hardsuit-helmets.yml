@@ -150,6 +150,9 @@
       head-dog:
       - state: equipped-head-light-dog
         shader: unshaded
+      head-reptilian:
+      - state: equipped-head-light-liz
+        shader: unshaded
   - type: Clothing
     clothingVisuals:
       head:
@@ -163,6 +166,10 @@
       head-dog:
       - state: equipped-head-dog
       - state: equipped-head-unshaded-dog
+        shader: unshaded
+      head-reptilian:
+      - state: equipped-head-liz
+      - state: equipped-head-unshaded-liz
         shader: unshaded
   - type: PointLight
     radius: 6
