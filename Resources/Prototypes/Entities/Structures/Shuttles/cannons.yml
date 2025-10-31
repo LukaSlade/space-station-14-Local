@@ -272,6 +272,55 @@
 # ---- Other weapon ----
 
 - type: entity
+  id: TinyShuttleGun
+  parent: [ShuttleGunBase, ConstructibleMachine]
+  name: "gun trap"
+  description: A small, barely functional, double barrel shotgun that seems duct taped to a tripod.
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shuttles/launcher.rsi
+    layers:
+    - state: exp-320g
+    - state: mag-7
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      ballistic-ammo: !type:Container
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:ChangeConstructionNodeBehavior
+          node: machineFrame
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Gun
+    selectedMode: Burst
+    shotsPerBurst: 2
+    burstCooldown: 0.375
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+      params:
+        pitch: 0.8
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    capacity: 2
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+
+- type: entity
   id: ShuttleGunPirateCannon
   parent: ShuttleGunBase
   name: pirate ship cannon
